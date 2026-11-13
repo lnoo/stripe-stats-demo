@@ -1,0 +1,13 @@
+/* Demo 页壳：仅重置 body 边距并给出兜底字体，区块自身的样式全部来自
+   src/features/stripe-stats/stripe-stats.css（自带全部 --hds-* / --stats-* 变量）。 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f6f9fc;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+}
