@@ -13,14 +13,19 @@ import {
   type RefObject,
 } from 'react'
 
+import datavizFallback from '../../../assets/dataviz/dataviz-fallback.png'
+import subscriptionsFallback from '../../../assets/dataviz/subscriptions-fallback.png'
+import uptimeFallback from '../../../assets/dataviz/uptime-fallback.png'
+import volumeFallback from '../../../assets/dataviz/volume-fallback.png'
+
 import { TIME_OF_DAY_PALETTES, type TimeOfDay } from './animation'
 import { DataVizManager, isMobileDevice } from './manager'
 
 const FALLBACK_IMAGES = [
-  'https://images.stripeassets.com/fzn2n1nzq965/7iwVhEHuNr5enwnkdi5vF0/221ef0ed4b2645423151dc17202ce4e4/dataviz-fallback_2x.png',
-  'https://images.stripeassets.com/fzn2n1nzq965/64K1iZhe99ADmiTzeY5TeI/47cfb0a595bbe98513df60c751aad398/volume-fallback_2x.png',
-  'https://images.stripeassets.com/fzn2n1nzq965/3SSo3PvsWE5lIEvc8xdMxs/df73b1b2269139f7466517ee14967847/uptime-fallback_2x.png',
-  'https://images.stripeassets.com/fzn2n1nzq965/6qa6IWCkNVnR0GhesY6Vzx/350d2ff12acb6b9677def4bf98b8251c/subscriptions-fallback_2x.png',
+  datavizFallback,
+  volumeFallback,
+  uptimeFallback,
+  subscriptionsFallback,
 ]
 
 export function useIsIntersecting(

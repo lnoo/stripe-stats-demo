@@ -9,6 +9,13 @@ import { useSyncExternalStore } from 'react'
 
 import './stripe-stats.css'
 
+import globe768 from '../../assets/dataviz/globe-768.png'
+import globe1536 from '../../assets/dataviz/globe-1536.png'
+import globe2304 from '../../assets/dataviz/globe-2304.png'
+import globe768Webp from '../../assets/dataviz/globe-768.webp'
+import globe1536Webp from '../../assets/dataviz/globe-1536.webp'
+import globe2304Webp from '../../assets/dataviz/globe-2304.webp'
+
 import {
   TIME_OF_DAY_VALUES,
   getTimeOfDayFromDate,
@@ -93,8 +100,9 @@ const STATS: StatItem[] = [
   },
 ]
 
-const GLOBE_IMAGE =
-  'https://images.stripeassets.com/fzn2n1nzq965/63zO5Z4CABvFl3pLLhnu3l/a9c12c883f820dc29d29fa0b9dcb0814/DatavizStatic3x.png'
+const GLOBE_WEBP_SRCSET =
+  `${globe768Webp} 1x, ${globe1536Webp} 2x, ${globe2304Webp} 3x`
+const GLOBE_SRCSET = `${globe768} 1x, ${globe1536} 2x, ${globe2304} 3x`
 
 /* ------------------------------------------------------------------ */
 /* Section                                                             */
@@ -303,17 +311,14 @@ export default function StripeStatsSection() {
         </div>
         <div className='stats-section__globe'>
           <picture className='stats-section__globe-picture'>
-            <source
-              type='image/webp'
-              srcSet={`${GLOBE_IMAGE}?w=768&fm=webp&q=90 1x, ${GLOBE_IMAGE}?w=1536&fm=webp&q=90 2x, ${GLOBE_IMAGE}?w=2304&fm=webp&q=90 3x`}
-            />
+            <source type='image/webp' srcSet={GLOBE_WEBP_SRCSET} />
             <img
               loading='lazy'
               width={2304}
               height={900}
               alt=''
-              srcSet={`${GLOBE_IMAGE}?w=768&q=90 1x, ${GLOBE_IMAGE}?w=1536&q=90 2x, ${GLOBE_IMAGE}?w=2304&q=90 3x`}
-              src={`${GLOBE_IMAGE}?w=768&q=90`}
+              srcSet={GLOBE_SRCSET}
+              src={globe768}
             />
           </picture>
         </div>
