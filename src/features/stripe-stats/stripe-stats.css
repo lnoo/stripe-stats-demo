@@ -146,6 +146,16 @@
   padding-inline: var(--hds-space-layout-page-margin);
 }
 
+/* Stripe ships a global `img,video{max-width:100%;height:auto}` reset; the
+   demo shell doesn't, so scope it here. Without it the globe <img> (2304px
+   wide intrinsic size) overflows its 768px <picture> and gets clipped, and
+   the fallback images get stretched because their HTML height still applies. */
+.stripe-stats-section img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .stripe-stats-section .section-background {
   position: absolute;
   z-index: 0;
